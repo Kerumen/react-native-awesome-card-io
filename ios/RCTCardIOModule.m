@@ -21,33 +21,72 @@ RCT_EXPORT_MODULE();
 @synthesize bridge = _bridge;
 
 - (void)parseConfig:(NSDictionary *)config viewController:(CardIOPaymentViewController *)viewController {
+    // Cross-platform settings
     if ([config objectForKey:@"languageOrLocale"] != nil) {
         NSString *value = [RCTConvert NSString:config[@"languageOrLocale"]];
         [viewController setValue:value forKey:@"languageOrLocale"];
-    }
-    if ([config objectForKey:@"keepStatusBarStyle"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"keepStatusBarStyle"]];
-        [viewController setValue:@(value) forKey:@"keepStatusBarStyle"];
-    }
-    if ([config objectForKey:@"navigationBarStyle"] != nil) {
-        UIBarStyle value = [RCTConvert UIBarStyle:config[@"navigationBarStyle"]];
-        [viewController setValue:@(value) forKey:@"navigationBarStyle"];
-    }
-    if ([config objectForKey:@"navigationBarTintColor"] != nil) {
-        UIColor *value = [RCTConvert UIColor:config[@"navigationBarTintColor"]];
-        [viewController setValue:value forKey:@"navigationBarTintColor"];
-    }
-    if ([config objectForKey:@"disableBlurWhenBackgrounding"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"disableBlurWhenBackgrounding"]];
-        [viewController setValue:@(value) forKey:@"disableBlurWhenBackgrounding"];
     }
     if ([config objectForKey:@"guideColor"] != nil) {
         UIColor *value = [RCTConvert UIColor:config[@"guideColor"]];
         [viewController setValue:value forKey:@"guideColor"];
     }
-    if ([config objectForKey:@"suppressScanConfirmation"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"suppressScanConfirmation"]];
+    if ([config objectForKey:@"useCardIOLogo"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"useCardIOLogo"]];
+        [viewController setValue:@(value) forKey:@"useCardIOLogo"];
+    }
+    if ([config objectForKey:@"hideCardIOLogo"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"hideCardIOLogo"]];
+        [viewController setValue:@(value) forKey:@"hideCardIOLogo"];
+    }
+    if ([config objectForKey:@"scanInstructions"] != nil) {
+        NSString *value = [RCTConvert NSString:config[@"scanInstructions"]];
+        [viewController setValue:value forKey:@"scanInstructions"];
+    }
+    if ([config objectForKey:@"suppressManualEntry"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"suppressManualEntry"]];
+        [viewController setValue:@(value) forKey:@"disableManualEntryButtons"];
+    }
+    if ([config objectForKey:@"suppressConfirmation"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"suppressConfirmation"]];
         [viewController setValue:@(value) forKey:@"suppressScanConfirmation"];
+    }
+    if ([config objectForKey:@"requireExpiry"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"requireExpiry"]];
+        [viewController setValue:@(value) forKey:@"collectExpiry"];
+    }
+    if ([config objectForKey:@"requireCVV"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"requireCVV"]];
+        [viewController setValue:@(value) forKey:@"collectCVV"];
+    }
+    if ([config objectForKey:@"requirePostalCode"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"requirePostalCode"]];
+        [viewController setValue:@(value) forKey:@"collectPostalCode"];
+    }
+    if ([config objectForKey:@"restrictPostalCodeToNumericOnly"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"restrictPostalCodeToNumericOnly"]];
+        [viewController setValue:@(value) forKey:@"restrictPostalCodeToNumericOnly"];
+    }
+    if ([config objectForKey:@"requireCardholderName"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"requireCardholderName"]];
+        [viewController setValue:@(value) forKey:@"collectCardholderName"];
+    }
+    if ([config objectForKey:@"scanExpiry"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"scanExpiry"]];
+        [viewController setValue:@(value) forKey:@"scanExpiry"];
+    }
+    
+    // iOS-only settings
+    if ([config objectForKey:@"disableBlurWhenBackgrounding"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"disableBlurWhenBackgrounding"]];
+        [viewController setValue:@(value) forKey:@"disableBlurWhenBackgrounding"];
+    }
+    if ([config objectForKey:@"keepStatusBarStyle"] != nil) {
+        BOOL value = [RCTConvert BOOL:config[@"keepStatusBarStyle"]];
+        [viewController setValue:@(value) forKey:@"keepStatusBarStyle"];
+    }
+    if ([config objectForKey:@"detectionMode"] != nil) {
+        CardIODetectionMode value = [RCTConvert CardIODetectionMode:config[@"detectionMode"]];
+        [viewController setValue:@(value) forKey:@"detectionMode"];
     }
     if ([config objectForKey:@"suppressScannedCardImage"] != nil) {
         BOOL value = [RCTConvert BOOL:config[@"suppressScannedCardImage"]];
@@ -61,53 +100,9 @@ RCT_EXPORT_MODULE();
         BOOL value = [RCTConvert BOOL:config[@"maskManualEntryDigits"]];
         [viewController setValue:@(value) forKey:@"maskManualEntryDigits"];
     }
-    if ([config objectForKey:@"scanInstructions"] != nil) {
-        NSString *value = [RCTConvert NSString:config[@"scanInstructions"]];
-        [viewController setValue:value forKey:@"scanInstructions"];
-    }
-    if ([config objectForKey:@"hideCardIOLogo"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"hideCardIOLogo"]];
-        [viewController setValue:@(value) forKey:@"hideCardIOLogo"];
-    }
-    if ([config objectForKey:@"detectionMode"] != nil) {
-        CardIODetectionMode value = [RCTConvert CardIODetectionMode:config[@"detectionMode"]];
-        [viewController setValue:@(value) forKey:@"detectionMode"];
-    }
-    if ([config objectForKey:@"collectExpiry"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"collectExpiry"]];
-        [viewController setValue:@(value) forKey:@"collectExpiry"];
-    }
-    if ([config objectForKey:@"collectCVV"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"collectCVV"]];
-        [viewController setValue:@(value) forKey:@"collectCVV"];
-    }
-    if ([config objectForKey:@"collectPostalCode"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"collectPostalCode"]];
-        [viewController setValue:@(value) forKey:@"collectPostalCode"];
-    }
-    if ([config objectForKey:@"restrictPostalCodeToNumericOnly"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"restrictPostalCodeToNumericOnly"]];
-        [viewController setValue:@(value) forKey:@"restrictPostalCodeToNumericOnly"];
-    }
-    if ([config objectForKey:@"collectCardholderName"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"collectCardholderName"]];
-        [viewController setValue:@(value) forKey:@"collectCardholderName"];
-    }
-    if ([config objectForKey:@"scanExpiry"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"scanExpiry"]];
-        [viewController setValue:@(value) forKey:@"scanExpiry"];
-    }
-    if ([config objectForKey:@"useCardIOLogo"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"useCardIOLogo"]];
-        [viewController setValue:@(value) forKey:@"useCardIOLogo"];
-    }
     if ([config objectForKey:@"allowFreelyRotatingCardGuide"] != nil) {
         BOOL value = [RCTConvert BOOL:config[@"allowFreelyRotatingCardGuide"]];
         [viewController setValue:@(value) forKey:@"allowFreelyRotatingCardGuide"];
-    }
-    if ([config objectForKey:@"disableManualEntryButtons"] != nil) {
-        BOOL value = [RCTConvert BOOL:config[@"disableManualEntryButtons"]];
-        [viewController setValue:@(value) forKey:@"disableManualEntryButtons"];
     }
 }
 

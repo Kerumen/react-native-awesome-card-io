@@ -18,7 +18,6 @@ RCT_EXPORT_VIEW_PROPERTY(useCardIOLogo, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(hideCardIOLogo, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(allowFreelyRotatingCardGuide, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(scanInstructions, NSString);
-RCT_EXPORT_VIEW_PROPERTY(scanOverlayView, UIView);
 RCT_EXPORT_VIEW_PROPERTY(scanExpiry, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(scannedImageDuration, CGFloat);
 RCT_EXPORT_VIEW_PROPERTY(detectionMode, CardIODetectionMode);

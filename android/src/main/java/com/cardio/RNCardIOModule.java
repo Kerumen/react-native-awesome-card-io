@@ -45,17 +45,33 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
   }
 
   public void parseConfig(ReadableMap config, Intent intent) {
-    if (config.hasKey("noCamera")) {
-      intent.putExtra(CardIOActivity.EXTRA_NO_CAMERA, config.getBoolean("noCamera"));
+    // Cross-platform settings
+    if (config.hasKey("languageOrLocale")) {
+      intent.putExtra(CardIOActivity.EXTRA_LANGUAGE_OR_LOCALE, config.getString("languageOrLocale"));
+    }
+    if (config.hasKey("guideColor")) {
+      intent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, config.getInt("guideColor"));
+    }
+    if (config.hasKey("useCardIOLogo")) {
+      intent.putExtra(CardIOActivity.EXTRA_USE_CARDIO_LOGO, config.getBoolean("useCardIOLogo"));
+    }
+    if (config.hasKey("hideCardIOLogo")) {
+      intent.putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, config.getInt("hideCardIOLogo"));
+    }
+    if (config.hasKey("scanInstructions")) {
+      intent.putExtra(CardIOActivity.EXTRA_SCAN_INSTRUCTIONS, config.getString("scanInstructions"));
+    }
+    if (config.hasKey("suppressManualEntry")) {
+      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, config.getBoolean("suppressManualEntry"));
+    }
+    if (config.hasKey("suppressConfirmation")) {
+      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_CONFIRMATION, config.getInt("suppressConfirmation"));
     }
     if (config.hasKey("requireExpiry")) {
       intent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, config.getBoolean("requireExpiry"));
     }
     if (config.hasKey("scanExpiry")) {
       intent.putExtra(CardIOActivity.EXTRA_SCAN_EXPIRY, config.getBoolean("scanExpiry"));
-    }
-    if (config.hasKey("unblurDigits")) {
-      intent.putExtra(CardIOActivity.EXTRA_UNBLUR_DIGITS, config.getInt("unblurDigits"));
     }
     if (config.hasKey("requireCVV")) {
       intent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, config.getBoolean("requireCVV"));
@@ -69,26 +85,13 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     if (config.hasKey("requireCardholderName")) {
       intent.putExtra(CardIOActivity.EXTRA_REQUIRE_CARDHOLDER_NAME, config.getBoolean("require_cardholder_name"));
     }
-    if (config.hasKey("useCardioLogo")) {
-      intent.putExtra(CardIOActivity.EXTRA_USE_CARDIO_LOGO, config.getBoolean("useCardioLogo"));
+
+    // Android-only settings
+    if (config.hasKey("noCamera")) {
+      intent.putExtra(CardIOActivity.EXTRA_NO_CAMERA, config.getBoolean("noCamera"));
     }
-    if (config.hasKey("suppressManualEntry")) {
-      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, config.getBoolean("suppressManualEntry"));
-    }
-    if (config.hasKey("languageOrLocale")) {
-      intent.putExtra(CardIOActivity.EXTRA_LANGUAGE_OR_LOCALE, config.getString("languageOrLocale"));
-    }
-    if (config.hasKey("guideColor")) {
-      intent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, config.getInt("guideColor"));
-    }
-    if (config.hasKey("suppressConfirmation")) {
-      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_CONFIRMATION, config.getInt("suppressConfirmation"));
-    }
-    if (config.hasKey("hideCardioLogo")) {
-      intent.putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, config.getInt("hideCardioLogo"));
-    }
-    if (config.hasKey("scanInstructions")) {
-      intent.putExtra(CardIOActivity.EXTRA_SCAN_INSTRUCTIONS, config.getString("scanInstructions"));
+    if (config.hasKey("unblurDigits")) {
+      intent.putExtra(CardIOActivity.EXTRA_UNBLUR_DIGITS, config.getInt("unblurDigits"));
     }
     if (config.hasKey("usePaypalActionbarIcon")) {
       intent.putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, config.getInt("usePaypalActionbarIcon"));

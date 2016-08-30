@@ -162,8 +162,8 @@ class CardIOExample extends Component {
    - `allowFreelyRotatingCardGuide` *boolean* `true` (iOS only) - By default, in camera view the card guide and the buttons always rotate to match the device's orientation. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L155))
    
    - `noCamera` *boolean* `false` (Android only) - If set, the card will not be scanned with the camera. ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_NO_CAMERA))
-   - `unblurDigits` *number* `-1` (Android only) - ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_UNBLUR_DIGITS))
-   - `usePaypalActionbarIcon` *boolean* `false` (Android only) - ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_USE_PAYPAL_ACTIONBAR_ICON))
+   - `unblurDigits` *number* `-1` (Android only) - Privacy feature. How many of the Card number digits NOT to blur on the resulting image. Setting it to 4 will blur all digits except the last four. ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_UNBLUR_DIGITS))
+   - `usePaypalActionbarIcon` *boolean* `false` (Android only) - Use the PayPal icon in the ActionBar. ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_USE_PAYPAL_ACTIONBAR_ICON))
 
 ### CreditCard
 

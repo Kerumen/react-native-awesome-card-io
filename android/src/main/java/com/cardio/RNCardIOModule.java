@@ -58,7 +58,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       intent.putExtra(CardIOActivity.EXTRA_USE_CARDIO_LOGO, config.getBoolean("useCardIOLogo"));
     }
     if (config.hasKey("hideCardIOLogo")) {
-      intent.putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, config.getInt("hideCardIOLogo"));
+      intent.putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, config.getBoolean("hideCardIOLogo"));
     }
     if (config.hasKey("scanInstructions")) {
       intent.putExtra(CardIOActivity.EXTRA_SCAN_INSTRUCTIONS, config.getString("scanInstructions"));
@@ -67,7 +67,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, config.getBoolean("suppressManualEntry"));
     }
     if (config.hasKey("suppressConfirmation")) {
-      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_CONFIRMATION, config.getInt("suppressConfirmation"));
+      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_CONFIRMATION, config.getBoolean("suppressConfirmation"));
     }
     if (config.hasKey("requireExpiry")) {
       intent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, config.getBoolean("requireExpiry"));
@@ -96,7 +96,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       intent.putExtra(CardIOActivity.EXTRA_UNBLUR_DIGITS, config.getInt("unblurDigits"));
     }
     if (config.hasKey("usePaypalActionbarIcon")) {
-      intent.putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, config.getInt("usePaypalActionbarIcon"));
+      intent.putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, config.getBoolean("usePaypalActionbarIcon"));
     }
   }
 

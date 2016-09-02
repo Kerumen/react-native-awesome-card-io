@@ -67,7 +67,7 @@ class CardIOExample extends Component {
       <View>
         <CardIOView
           didScanCard={this.didScanCard}
-          style={{ flex: 1 }} 
+          style={{ flex: 1 }}
         />
       </View>
     );
@@ -151,16 +151,16 @@ class CardIOExample extends Component {
    - `requireCVV` *boolean* `true` - Set to `false` if you don't need to collect the CVV from the user. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L129) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_REQUIRE_CVV))
    - `requirePostalCode` *boolean* `false` - Set to `false` if you need to collect the billing postal code. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L132) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_REQUIRE_POSTAL_CODE))
    - `restrictPostalCodeToNumericOnly` *boolean* `false` - Set to `true` if the postal code should only collect numeric input. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L137) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_RESTRICT_POSTAL_CODE_TO_NUMERIC_ONLY))
-   - `requireCardholderName` *string* `false` - Set to `true` if you need to collect the cardholder name. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L140) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_REQUIRE_CARDHOLDER_NAME))
+   - `requireCardholderName` *boolean* `false` - Set to `true` if you need to collect the cardholder name. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L140) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_REQUIRE_CARDHOLDER_NAME))
    - `scanExpiry` *boolean* `true` - Set to `false` if you don't want the camera to try to scan the card expiration. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L145) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_SCAN_EXPIRY))
-   
+
    - `disableBlurWhenBackgrounding` *boolean* `false` (iOS only) - Disable the blur of the screen when the app is backgrounded. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L163))
    - `keepStatusBarStyle` *boolean* `false` (iOS only) - If `true`, the status bar's style will be kept as whatever your app has set it to. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L48))
    - `detectionMode` *[CardIODetectionMode](#constants)* `false` (iOS only) - Set the detection mode. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L123))
    - `suppressScannedCardImage` *boolean* `false` (iOS only) - If `true`, instead of displaying the image of the scanned card, present the manual entry screen with the scanned card number prefilled. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L79))
    - `scannedImageDuration` *number* `0.1` (iOS only) - How long card.io will display an image of the card with the computed card number superimposed after a successful scan. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L86))
    - `allowFreelyRotatingCardGuide` *boolean* `true` (iOS only) - By default, in camera view the card guide and the buttons always rotate to match the device's orientation. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L155))
-   
+
    - `noCamera` *boolean* `false` (Android only) - If set, the card will not be scanned with the camera. ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_NO_CAMERA))
    - `unblurDigits` *number* `-1` (Android only) - Privacy feature. How many of the Card number digits NOT to blur on the resulting image. Setting it to 4 will blur all digits except the last four. ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_UNBLUR_DIGITS))
    - `usePaypalActionbarIcon` *boolean* `false` (Android only) - Use the PayPal icon in the ActionBar. ([Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_USE_PAYPAL_ACTIONBAR_ICON))

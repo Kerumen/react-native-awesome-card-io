@@ -85,7 +85,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       intent.putExtra(CardIOActivity.EXTRA_RESTRICT_POSTAL_CODE_TO_NUMERIC_ONLY, config.getBoolean("restrictPostalCodeToNumericOnly"));
     }
     if (config.hasKey("requireCardholderName")) {
-      intent.putExtra(CardIOActivity.EXTRA_REQUIRE_CARDHOLDER_NAME, config.getBoolean("require_cardholder_name"));
+      intent.putExtra(CardIOActivity.EXTRA_REQUIRE_CARDHOLDER_NAME, config.getBoolean("requireCardholderName"));
     }
 
     // Android-only settings

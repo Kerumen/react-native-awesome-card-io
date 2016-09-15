@@ -20,9 +20,5 @@
     "ios"
   ],
   "author": "Yann Pringault <yann.pringault@gmail.com>",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "^15.3.0",
-    "react-native": "^0.32.0"
-  }
+  "license": "MIT"
 }

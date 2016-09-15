@@ -2,7 +2,6 @@ package com.cardio;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Arguments;
@@ -12,7 +11,6 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.WritableNativeMap;
 
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
@@ -101,7 +99,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
   }
 
   @Override
-  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+  public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
     if (requestCode != CARD_IO_SCAN) {
       return;
     }

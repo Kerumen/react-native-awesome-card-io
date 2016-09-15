@@ -1,7 +1,5 @@
 package com.cardio;
 
-import android.content.Intent;
-
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;

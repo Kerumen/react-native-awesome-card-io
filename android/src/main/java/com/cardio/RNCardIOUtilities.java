@@ -1,14 +1,14 @@
 package com.cardio;
 
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
 
 import io.card.payment.CardIOActivity;
 
-public class RNCardIOUtilities extends ReactContextBaseJavaModule {
+import java.util.HashMap;
+import java.util.Map;
 
+public class RNCardIOUtilities extends ReactContextBaseJavaModule {
   public RNCardIOUtilities(ReactApplicationContext reactContext) {
     super(reactContext);
   }
@@ -18,8 +18,10 @@ public class RNCardIOUtilities extends ReactContextBaseJavaModule {
     return "RCTCardIOUtilities";
   }
 
-  @ReactMethod
-  public void canReadCardWithCamera(Callback callback) {
-    callback.invoke(CardIOActivity.canReadCardWithCamera());
+  @Override
+  public Map<String, Object> getConstants() {
+    final Map<String, Object> constants = new HashMap<>();
+    constants.put("CAN_READ_CARD_WITH_CAMERA", CardIOActivity.canReadCardWithCamera());
+    return constants;
   }
 }

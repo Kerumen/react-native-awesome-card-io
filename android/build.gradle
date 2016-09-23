@@ -42,5 +42,5 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'io.card:android-sdk:5.4.0'
+    compile 'io.card:android-sdk:5.4.1'
 }

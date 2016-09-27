@@ -29,9 +29,9 @@ RCT_EXPORT_VIEW_PROPERTY(detectionMode, CardIODetectionMode);
 }
 
 -(void)cardIOView:(CardIOView *)cardIOView didScanCard:(CardIOCreditCardInfo *)cardInfo {
-    
+
     NSString *cardType = [CardIOCreditCardInfo displayStringForCardType:cardInfo.cardType usingLanguageOrLocale:cardIOView.languageOrLocale];
-    
+
     [self.bridge.eventDispatcher
      sendAppEventWithName:@"didScanCard"
      body:@{
@@ -42,7 +42,8 @@ RCT_EXPORT_VIEW_PROPERTY(detectionMode, CardIODetectionMode);
             @"expiryYear": @(cardInfo.expiryYear) ?: [NSNull null],
             @"cvv": cardInfo.cvv ?: [NSNull null],
             @"postalCode": cardInfo.postalCode ?: [NSNull null],
-            @"scanned": @(cardInfo.scanned)
+            @"scanned": @(cardInfo.scanned),
+            @"cardholderName": cardInfo.cardholderName ?: [NSNull null]
         }
     ];
 }

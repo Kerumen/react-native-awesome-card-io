@@ -113,6 +113,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       res.putInt("expiryYear", scanResult.expiryYear);
       res.putString("cvv", scanResult.cvv);
       res.putString("postalCode", scanResult.postalCode);
+      res.putString("cardholderName", scanResult.cardholderName);
       promise.resolve(res);
     } else {
       promise.reject("user_cancelled", "The user cancelled");

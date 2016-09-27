@@ -177,6 +177,7 @@ An object with the following keys:
 - `cvv` *string* - Security code.
 - `postalCode` *string* - Postal code. Format is country dependent.
 - `scanned` *boolean* (iOS only) - Was the card number scanned (as opposed to entered manually)?
+- `cardholderName` *string* - Card holder name.
 
 ### CardIOUtilities
 

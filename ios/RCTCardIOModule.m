@@ -74,7 +74,7 @@ RCT_EXPORT_MODULE();
         BOOL value = [RCTConvert BOOL:config[@"scanExpiry"]];
         [viewController setValue:@(value) forKey:@"scanExpiry"];
     }
-    
+
     // iOS-only settings
     if ([config objectForKey:@"disableBlurWhenBackgrounding"] != nil) {
         BOOL value = [RCTConvert BOOL:config[@"disableBlurWhenBackgrounding"]];
@@ -110,9 +110,9 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
     _resolve = resolve;
     _reject = reject;
     CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
-    
+
     [self parseConfig:config viewController:scanViewController];
-    
+
     UIViewController *rootViewController = RCTPresentedViewController();
     [rootViewController presentViewController:scanViewController animated:YES completion:nil];
 }
@@ -124,9 +124,9 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
 
 - (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)cardInfo inPaymentViewController:(CardIOPaymentViewController *)scanViewController {
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
-    
+
     NSString *cardType = [CardIOCreditCardInfo displayStringForCardType:cardInfo.cardType usingLanguageOrLocale:scanViewController.languageOrLocale];
-    
+
     _resolve(@{
         @"cardType": cardType,
         @"cardNumber": cardInfo.cardNumber ?: [NSNull null],
@@ -135,7 +135,8 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
         @"expiryYear": @(cardInfo.expiryYear) ?: [NSNull null],
         @"cvv": cardInfo.cvv ?: [NSNull null],
         @"postalCode": cardInfo.postalCode ?: [NSNull null],
-        @"scanned": @(cardInfo.scanned)
+        @"scanned": @(cardInfo.scanned),
+        @"cardholderName": cardInfo.cardholderName ?: [NSNull null]
     });
 }
 

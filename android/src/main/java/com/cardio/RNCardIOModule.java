@@ -2,6 +2,7 @@ package com.cardio;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Arguments;
@@ -50,7 +51,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       intent.putExtra(CardIOActivity.EXTRA_LANGUAGE_OR_LOCALE, config.getString("languageOrLocale"));
     }
     if (config.hasKey("guideColor")) {
-      intent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, config.getInt("guideColor"));
+      intent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, Color.parseColor(config.getString("guideColor")));
     }
     if (config.hasKey("useCardIOLogo")) {
       intent.putExtra(CardIOActivity.EXTRA_USE_CARDIO_LOGO, config.getBoolean("useCardIOLogo"));

@@ -9,7 +9,8 @@
 #ifndef RCTCardIOUtilities_h
 #define RCTCardIOUtilities_h
 
-#import "RCTBridge.h"
+#import <React/RCTBridge.h>
+
 #import "CardIO.h"
 #import "RCTConvert+CardIODetectionMode.h"
 

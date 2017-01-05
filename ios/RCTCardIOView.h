@@ -9,8 +9,9 @@
 #ifndef RCTCardIOView_h
 #define RCTCardIOView_h
 
-#import "RCTViewManager.h"
-#import "RCTBridge.h"
+#import <React/RCTViewManager.h>
+#import <React/RCTBridge.h>
+
 #import "CardIO.h"
 
 @interface RCTCardIOView : RCTViewManager <CardIOViewDelegate>

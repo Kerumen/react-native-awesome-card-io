@@ -9,7 +9,8 @@
 #ifndef RCTConvert_CardIODetectionMode_h
 #define RCTConvert_CardIODetectionMode_h
 
-#import "RCTConvert.h"
+#import <React/RCTConvert.h>
+
 #import "CardIO.h"
 
 #define DETECTION_MODE  @{ @"IMAGE_AND_NUMBER" : @(CardIODetectionModeCardImageAndNumber), @"IMAGE" : @(CardIODetectionModeCardImageOnly), @"AUTOMATIC" : @(CardIODetectionModeAutomatic) }

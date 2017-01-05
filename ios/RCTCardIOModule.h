@@ -9,11 +9,12 @@
 #ifndef RCTCardIOModule_h
 #define RCTCardIOModule_h
 
-#import "RCTRootView.h"
-#import "RCTBridge.h"
+#import <React/RCTRootView.h>
+#import <React/RCTBridge.h>
+#import <React/RCTUIManager.h>
+#import <React/RCTUtils.h>
+
 #import "CardIO.h"
-#import "RCTUIManager.h"
-#import "RCTUtils.h"
 #import "RCTConvert+CardIODetectionMode.h"
 
 @interface RCTCardIOModule : NSObject <RCTBridgeModule>

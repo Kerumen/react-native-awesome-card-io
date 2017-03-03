@@ -40,7 +40,7 @@ class CardIOExample extends Component {
     return (
       <View>
         <CardIOView
-          didScanCard={this.didScanCard}
+          didScanCard={this.didScanCard.bind(this)}
           style={{ flex: 1 }}
         />
       </View>
@@ -100,7 +100,7 @@ class CardIOExample extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={this.scanCard}>
+        <TouchableOpacity onPress={this.scanCard.bind(this)}>
           <Text>Scan card!</Text>
         </TouchableOpacity>
       </View>

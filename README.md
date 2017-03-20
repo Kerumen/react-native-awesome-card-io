@@ -1,5 +1,6 @@
-# react-native-awesome-card-io
+# [react-native-awesome-card-io](https://kerumen.github.io/react-native-awesome-card-io/)
 A complete and **cross-platform** [card.io](https://www.card.io/) component for React Native.
+
 
 ## Getting started
 
@@ -19,9 +20,9 @@ This component provides an abstraction of the card.io entry points for iOS and A
 
 ### `CardIOView`
 
-*This component is iOS-only as the card.io Android SDK do not offer this functionality.*
+*This component is iOS-only as the card.io Android SDK does not offer this functionality.*
 
-```javascript
+```jsx
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { CardIOView, CardIOUtilities } from 'react-native-awesome-card-io';
@@ -75,7 +76,7 @@ class CardIOExample extends Component {
 
 *This module abstracts the [`CardIOPaymentViewController`](https://github.com/card-io/card.io-iOS-SDK#integrate-as-a-view) on iOS and the [`CardIOActivity`](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html) on Android.*
 
-```javascript
+```jsx
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { CardIOModule, CardIOUtilities } from 'react-native-awesome-card-io';

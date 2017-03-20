@@ -50,8 +50,8 @@
     },
     {
       "component": "header",
-      "heading": "react-native-awesome-card-io",
-      "subhead": "A complete and cross-platform card.io component for React Native (iOS and Android).",
+      "heading": "React Native Awesome card.io",
+      "subhead": "A complete and cross-platform card.io component for React Native.",
       "children": [
         {
           "component": "ui/TweetButton",

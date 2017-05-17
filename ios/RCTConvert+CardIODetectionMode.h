@@ -9,7 +9,13 @@
 #ifndef RCTConvert_CardIODetectionMode_h
 #define RCTConvert_CardIODetectionMode_h
 
+#if __has_include(<React/RCTConvert.h>)
+// React Native >= 0.40
 #import <React/RCTConvert.h>
+#else
+// React Native <= 0.39
+#import <RCTConvert.h>
+#endif
 
 #import "CardIO.h"
 

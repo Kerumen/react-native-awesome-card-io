@@ -14,7 +14,7 @@
 #import <React/RCTConvert.h>
 #else
 // React Native <= 0.39
-#import <RCTConvert.h>
+#import "RCTConvert.h"
 #endif
 
 #import "CardIO.h"

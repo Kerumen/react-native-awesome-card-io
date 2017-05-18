@@ -14,7 +14,7 @@
 #import <React/RCTBridge.h>
 #else
 // React Native <= 0.39
-#import <RCTBridge.h>
+#import "RCTBridge.h"
 #endif
 
 #import "CardIO.h"

@@ -17,10 +17,10 @@
 #import <React/RCTUtils.h>
 #else
 // React Native <= 0.39
-#import <RCTRootView.h>
-#import <RCTBridge.h>
-#import <RCTUIManager.h>
-#import <RCTUtils.h>
+#import "RCTRootView.h"
+#import "RCTBridge.h"
+#import "RCTUIManager.h"
+#import "RCTUtils.h"
 #endif
 
 #import "CardIO.h"

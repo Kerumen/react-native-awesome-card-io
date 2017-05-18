@@ -9,10 +9,19 @@
 #ifndef RCTCardIOModule_h
 #define RCTCardIOModule_h
 
+#if __has_include(<React/RCTBridge.h>)
+// React Native >= 0.40
 #import <React/RCTRootView.h>
 #import <React/RCTBridge.h>
 #import <React/RCTUIManager.h>
 #import <React/RCTUtils.h>
+#else
+// React Native <= 0.39
+#import "RCTRootView.h"
+#import "RCTBridge.h"
+#import "RCTUIManager.h"
+#import "RCTUtils.h"
+#endif
 
 #import "CardIO.h"
 #import "RCTConvert+CardIODetectionMode.h"

@@ -33,7 +33,7 @@ class CardIOExample extends Component {
     CardIOUtilities.preload();
   }
 
-  didScanCard(card) {
+  didScanCard = (card) => {
     // the scanned card
   }
 
@@ -41,7 +41,7 @@ class CardIOExample extends Component {
     return (
       <View>
         <CardIOView
-          didScanCard={this.didScanCard.bind(this)}
+          didScanCard={this.didScanCard}
           style={{ flex: 1 }}
         />
       </View>

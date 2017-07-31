@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 class CardIOView extends Component {
   render() {

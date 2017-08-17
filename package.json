@@ -20,5 +20,8 @@
     "ios"
   ],
   "author": "Yann Pringault <yann.pringault@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  }
 }

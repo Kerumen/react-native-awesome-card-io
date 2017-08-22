@@ -1,11 +1,12 @@
 {
-  "name": "react-native-awesome-card-io",
-  "version": "0.6.4",
+  "name": "react-native-awesome-card-io-ev",
+  "version": "0.6.7",
   "description": "A complete and cross-platform React Native component for card.io",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "registry": "http://mac-build-server.dev.evivehealth.com:4873",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kerumen/react-native-awesome-card-io"
@@ -20,8 +21,5 @@
     "ios"
   ],
   "author": "Yann Pringault <yann.pringault@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "prop-types": "^15.5.10"
-  }
+  "license": "MIT"
 }

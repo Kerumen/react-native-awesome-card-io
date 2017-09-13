@@ -99,6 +99,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     }
   }
 
+  @Override
   public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
     if (requestCode != CARD_IO_SCAN) {
       return;
@@ -120,10 +121,6 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     }
   }
 
-  public void onNewIntent(Intent intent) {}
-
   @Override
-  public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    this.onActivityResult(null, requestCode, resultCode, data);
-  }
+  public void onNewIntent(Intent intent) {}
 }

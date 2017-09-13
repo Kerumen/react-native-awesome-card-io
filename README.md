@@ -78,13 +78,15 @@ class CardIOExample extends Component {
 
 ```jsx
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, Platform } from 'react-native';
 import { CardIOModule, CardIOUtilities } from 'react-native-awesome-card-io';
 
 class CardIOExample extends Component {
 
   componentWillMount() {
-    CardIOUtilities.preload();
+    if (Platform.OS === 'ios') {
+      CardIOUtilities.preload();
+    }
   }
 
   scanCard() {

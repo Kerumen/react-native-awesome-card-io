@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from  'prop-types';
+import PropTypes from 'prop-types';
 import { requireNativeComponent, NativeAppEventEmitter, NativeModules } from 'react-native';
 
 const { CardIOUtilities } = NativeModules;

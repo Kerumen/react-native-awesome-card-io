@@ -1,11 +1,11 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from 'react-native'
 
-const RNCardIOModule = NativeModules.CardIOModule;
+const RNCardIOModule = NativeModules.CardIOModule
 
 const CardIOModule = {
   scanCard(config = {}) {
-    return RNCardIOModule.scanCard(config);
+    return RNCardIOModule.scanCard(config)
   },
-};
+}
 
-export default CardIOModule;
+export default CardIOModule

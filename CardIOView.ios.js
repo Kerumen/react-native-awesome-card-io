@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { requireNativeComponent, NativeAppEventEmitter, NativeModules } from 'react-native';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import {
+  requireNativeComponent,
+  NativeAppEventEmitter,
+  NativeModules,
+} from 'react-native'
 
-const { CardIOUtilities } = NativeModules;
+const { CardIOUtilities } = NativeModules
 
 class CardIOView extends Component {
   static propTypes = {
@@ -21,23 +25,26 @@ class CardIOView extends Component {
       CardIOUtilities.DETECTION_MODE.IMAGE_AND_NUMBER,
       CardIOUtilities.DETECTION_MODE.IMAGE,
     ]),
-  };
+  }
 
   componentWillMount() {
-    this.listener = NativeAppEventEmitter.addListener('didScanCard', this.props.didScanCard);
+    this.listener = NativeAppEventEmitter.addListener(
+      'didScanCard',
+      this.props.didScanCard,
+    )
   }
 
   componentWillUnmount() {
     if (this.listener) {
-      this.listener.remove();
+      this.listener.remove()
     }
   }
 
   render() {
-    return <RCTCardIOView {...this.props} />;
+    return <RCTCardIOView {...this.props} />
   }
 }
 
-const RCTCardIOView = requireNativeComponent('RCTCardIOView', CardIOView);
+const RCTCardIOView = requireNativeComponent('RCTCardIOView', CardIOView)
 
-export default CardIOView;
+export default CardIOView

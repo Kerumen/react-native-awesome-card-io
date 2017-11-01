@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     margin: 5,
     fontSize: 10,
   },
-});
+})
 
 const CardIOView = () => (
   <View style={styles.container}>
@@ -24,6 +24,6 @@ const CardIOView = () => (
       CardIOView is not supported on this platform!
     </Text>
   </View>
-);
+)
 
-export default CardIOView;
+export default CardIOView

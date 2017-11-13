@@ -1,5 +1,5 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from 'react-native'
 
-const { CardIOUtilities } = NativeModules;
+const { CardIOUtilities } = NativeModules
 
-export default CardIOUtilities;
+export default CardIOUtilities

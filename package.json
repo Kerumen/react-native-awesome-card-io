@@ -8,7 +8,7 @@
     "lint": "eslint *.js --fix",
     "prettier": "prettier --write *.js"
   },
-  "registry": "http://mac-build-server.dev.evivehealth.com:4873",
+  "registry": "http://mac-build-server.dev.evivehealth.com:4000/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kerumen/react-native-awesome-card-io"

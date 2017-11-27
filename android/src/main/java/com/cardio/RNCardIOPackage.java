@@ -24,4 +24,9 @@ public class RNCardIOPackage implements ReactPackage {
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
       return Collections.emptyList();
     }
+    
+    // For backward-compatibility with RN <0.47.0
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+      return Collections.emptyList();
+    }
 }

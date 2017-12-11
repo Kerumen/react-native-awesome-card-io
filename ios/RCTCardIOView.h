@@ -19,7 +19,12 @@
 #import "RCTBridge.h"
 #endif
 
+#if __has_include("CardIO/CardIO.h")
+#import "CardIO/CardIO.h"
+#else
 #import "CardIO.h"
+#endif
+#import "RCTConvert+CardIODetectionMode.h"
 
 @interface RCTCardIOView : RCTViewManager <CardIOViewDelegate>
 

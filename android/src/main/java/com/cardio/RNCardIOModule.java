@@ -25,7 +25,6 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
   public RNCardIOModule(ReactApplicationContext reactContext) {
     super(reactContext);
     reactContext.addActivityEventListener(this);
-
   }
 
   @Override

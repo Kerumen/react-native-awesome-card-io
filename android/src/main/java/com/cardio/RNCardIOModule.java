@@ -124,7 +124,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       Bitmap resultCard = CardIOActivity.getCapturedCardImage(data);
 
         ContextWrapper wrapper = new ContextWrapper(getApplicationContext());
-        File newImageFile = wrapper.getDir("images",MODE_PRIVATE);
+        File newImageFile = wrapper.getDir("images",0);
         newImageFile = new File(newImageFile, "detectedCardImage"+ ".jpg");
         try {
             OutputStream outputStream = new FileOutputStream(newImageFile);

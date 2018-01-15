@@ -16,6 +16,7 @@ import com.facebook.react.bridge.WritableMap;
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
 
+import android.graphics.Bitmap;
 import android.content.ContextWrapper;
 import java.io.File;
 import java.io.FileNotFoundException;

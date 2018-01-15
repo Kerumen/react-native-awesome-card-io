@@ -30,9 +30,11 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
   public static final int CARD_IO_SCAN = 1;
 
   private Promise promise;
+  private ReactApplicationContext mReactContext;
 
   public RNCardIOModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    mReactContext = reactContext;
     reactContext.addActivityEventListener(this);
   }
 
@@ -123,7 +125,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       
       Bitmap resultCard = CardIOActivity.getCapturedCardImage(data);
 
-        ContextWrapper wrapper = new ContextWrapper(getApplicationContext());
+        ContextWrapper wrapper = new ContextWrapper(mReactContext);
         File newImageFile = wrapper.getDir("images",0);
         newImageFile = new File(newImageFile, "detectedCardImage"+ ".jpg");
         try {

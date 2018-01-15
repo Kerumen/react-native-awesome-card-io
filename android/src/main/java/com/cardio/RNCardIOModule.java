@@ -47,7 +47,6 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     Intent scanIntent = new Intent(activity, CardIOActivity.class);
     //scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, true);
     //scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, true);
-    scanIntent.putExtra(CardIOActivity.EXTRA_SCAN_RESULT, true);
     scanIntent.putExtra(CardIOActivity.EXTRA_CAPTURED_CARD_IMAGE, true);
     scanIntent.putExtra(CardIOActivity.EXTRA_RETURN_CARD_IMAGE, true);
     

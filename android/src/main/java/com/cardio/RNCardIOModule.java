@@ -142,7 +142,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
 
       
       WritableMap res = Arguments.createMap();
-      res.putString("imagePath", newImageFile.getAbsolutePath());
+      res.putString("scannedImagePath", newImageFile.getAbsolutePath());
       res.putString("cardNumber", scanResult.cardNumber);
       res.putString("redactedCardNumber", scanResult.getRedactedCardNumber());
       res.putInt("expiryMonth", scanResult.expiryMonth);

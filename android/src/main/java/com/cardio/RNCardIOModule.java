@@ -122,6 +122,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
       return;
     }
     if (data != null ) {
+     
       
       Bitmap resultCard = CardIOActivity.getCapturedCardImage(data);
 
@@ -140,6 +141,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
             e.printStackTrace();
         }
 
+      CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
       
       WritableMap res = Arguments.createMap();
       res.putString("scannedImagePath", newImageFile.getAbsolutePath());

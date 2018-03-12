@@ -1,4 +1,5 @@
-# [react-native-awesome-card-io](https://kerumen.github.io/react-native-awesome-card-io/)
+# [react-native-awesome-card-io](https://github.com/Skyscanner/react-native-awesome-card-io)
+we fork the project form [Kerumen's react native card-io project](https://github.com/Kerumen/react-native-awesome-card-io).
 A complete and **cross-platform** [card.io](https://www.card.io/) component for React Native.
 
 ## Getting started

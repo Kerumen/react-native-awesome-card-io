@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kerumen/react-native-awesome-card-io"
+    "url": "git+https://github.com/Skyscanner/react-native-awesome-card-io"
   },
   "keywords": [
     "react-native",
@@ -21,7 +21,7 @@
     "android",
     "ios"
   ],
-  "author": "Yann Pringault <yann.pringault@gmail.com>",
+  "author": "Skyscanner",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.5.10"

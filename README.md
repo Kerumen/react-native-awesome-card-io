@@ -17,6 +17,14 @@ This component provides an abstraction of the card.io entry points for iOS and A
 | `CardIOModule` | [`CardIOPaymentViewController`](https://github.com/card-io/card.io-iOS-SDK#integrate-as-a-view) | [`CardIOActivity`](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html) | A module to launch the card.io view controller which handles everything.            |
 | `CardIOView`   | [`CardIOView`](https://github.com/card-io/card.io-iOS-SDK#integrate-as-a-view-controller)       | N / A                                                                                                | Create a `CardIOView` to do card scanning only and manage everything else yourself. |
 
+Note for Android: add 
+
+```<uses-permission android:name="android.permission.CAMERA"/> ```
+
+to your app's `AndroidManifest.xml`
+
+or follow this [`guide for handling Android permissions in React-Native`](https://facebook.github.io/react-native/docs/permissionsandroid)
+
 ### `CardIOView`
 
 *This component is iOS-only as the card.io Android SDK does not offer this functionality.*

@@ -48,6 +48,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.facebook.react:react-native:+'
+    compileOnly 'com.facebook.react:react-native:+'
     implementation 'io.card:android-sdk:5.5.1'
 }

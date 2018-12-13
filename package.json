@@ -8,6 +8,7 @@
     "lint": "eslint *.js --fix",
     "prettier": "prettier --write *.js"
   },
+  "homepage": "https://github.com/Kerumen/react-native-awesome-card-io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kerumen/react-native-awesome-card-io"

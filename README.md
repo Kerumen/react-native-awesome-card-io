@@ -1,10 +1,6 @@
 # [react-native-awesome-card-io](https://kerumen.github.io/react-native-awesome-card-io/)
 A complete and **cross-platform** [card.io](https://www.card.io/) component for React Native.
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/52NEFjsNJgo8R6ATvpia8A23/Kerumen/react-native-awesome-card-io'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/52NEFjsNJgo8R6ATvpia8A23/Kerumen/react-native-awesome-card-io.svg' />
-</a>
-
 ## Getting started
 
 ```bash

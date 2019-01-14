@@ -39,6 +39,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     Intent scanIntent = new Intent(activity, CardIOActivity.class);
     scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, true);
     scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, true);
+    scanIntent.putExtra(CardIOActivity.EXTRA_KEEP_APPLICATION_THEME, true);
     parseConfig(config, scanIntent);
     if (activity != null) {
       activity.startActivityForResult(scanIntent, CARD_IO_SCAN);
@@ -49,6 +50,9 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     // Cross-platform settings
     if (config.hasKey("languageOrLocale")) {
       intent.putExtra(CardIOActivity.EXTRA_LANGUAGE_OR_LOCALE, config.getString("languageOrLocale"));
+    }
+    if (config.hasKey("keepTheme")) {
+      intent.putExtra(CardIOActivity.EXTRA_KEEP_APPLICATION_THEME, config.getBoolean("keepTheme"));
     }
     if (config.hasKey("guideColor")) {
       intent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, Color.parseColor(config.getString("guideColor")));

@@ -6,10 +6,10 @@ Pod::Spec.new do |s|
   s.version          = package["version"]
   s.summary          = package["description"]
   s.requires_arc     = true
-  s.license          = package["license"]
+  s.license          = { :type => package["license"] }
   s.homepage         = package["homepage"]
-  s.authors          = package["author"]
-  s.source           = { :git => package["homepage"] }
+  s.authors          = { package["author"] => package["author"] }
+  s.source           = { :git => s.homepage, :tag => "#v{s.version}" }
   s.source_files     = ['ios/*.{h,m}', 'ios/CardIO/*.h']
   s.platform         = :ios, "8.0"
   s.frameworks       = 'Accelerate', 'AVFoundation', 'AudioToolbox', 'CoreMedia', 'CoreVideo', 'MobileCoreServices', 'OpenGLES', 'QuartzCore', 'Security', 'UIKit'

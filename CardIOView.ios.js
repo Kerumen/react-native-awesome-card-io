@@ -28,10 +28,9 @@ class CardIOView extends Component {
   }
 
   componentWillMount() {
-    const { didScanCard } = this.props
     this.listener = NativeAppEventEmitter.addListener(
       'didScanCard',
-      didScanCard,
+      this.props.didScanCard,
     )
   }
 

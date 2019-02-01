@@ -22,6 +22,7 @@
     "ios"
   ],
   "author": "Yann Pringault <yann.pringault@gmail.com>",
+  "homepage": "https://github.com/Kerumen/react-native-awesome-card-io",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.6.2"

@@ -17,7 +17,12 @@
 #import "RCTConvert.h"
 #endif
 
+#if __has_include("CardIO/CardIO.h")
+#import "CardIO/CardIO.h"
+#else
 #import "CardIO.h"
+#endif
+#import "RCTConvert+CardIODetectionMode.h"
 
 #define DETECTION_MODE  @{ @"IMAGE_AND_NUMBER" : @(CardIODetectionModeCardImageAndNumber), @"IMAGE" : @(CardIODetectionModeCardImageOnly), @"AUTOMATIC" : @(CardIODetectionModeAutomatic) }
 

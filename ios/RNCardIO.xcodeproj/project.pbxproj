@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AAD04B9B1D6EE90F0059CD99 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD04B981D6EE90F0059CD99 /* libCardIO.a */; };
-		AAD04B9C1D6EE90F0059CD99 /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD04B991D6EE90F0059CD99 /* libopencv_core.a */; };
-		AAD04B9D1D6EE90F0059CD99 /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD04B9A1D6EE90F0059CD99 /* libopencv_imgproc.a */; };
 		AAD04BA01D6EE9C00059CD99 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD04B9F1D6EE9C00059CD99 /* Accelerate.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AAD04BA21D6EE9CA0059CD99 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD04BA11D6EE9CA0059CD99 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AAD04BA41D6EE9D30059CD99 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD04BA31D6EE9D30059CD99 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -35,17 +32,6 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCardIO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCardIO.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAD04B901D6EE90F0059CD99 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
-		AAD04B911D6EE90F0059CD99 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
-		AAD04B921D6EE90F0059CD99 /* CardIODetectionMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIODetectionMode.h; sourceTree = "<group>"; };
-		AAD04B931D6EE90F0059CD99 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
-		AAD04B941D6EE90F0059CD99 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
-		AAD04B951D6EE90F0059CD99 /* CardIOUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOUtilities.h; sourceTree = "<group>"; };
-		AAD04B961D6EE90F0059CD99 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
-		AAD04B971D6EE90F0059CD99 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
-		AAD04B981D6EE90F0059CD99 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
-		AAD04B991D6EE90F0059CD99 /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_core.a; sourceTree = "<group>"; };
-		AAD04B9A1D6EE90F0059CD99 /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
 		AAD04B9F1D6EE9C00059CD99 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AAD04BA11D6EE9CA0059CD99 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AAD04BA31D6EE9D30059CD99 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -71,9 +57,6 @@
 				AAD04BA41D6EE9D30059CD99 /* AudioToolbox.framework in Frameworks */,
 				AAD04BA61D6EE9DE0059CD99 /* CoreMedia.framework in Frameworks */,
 				AAD04BA81D6EE9F90059CD99 /* MobileCoreServices.framework in Frameworks */,
-				AAD04B9B1D6EE90F0059CD99 /* libCardIO.a in Frameworks */,
-				AAD04B9C1D6EE90F0059CD99 /* libopencv_core.a in Frameworks */,
-				AAD04B9D1D6EE90F0059CD99 /* libopencv_imgproc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,27 +80,8 @@
 				AAD04BA11D6EE9CA0059CD99 /* AVFoundation.framework */,
 				AAD04B9F1D6EE9C00059CD99 /* Accelerate.framework */,
 				AAD04B9E1D6EE91D0059CD99 /* RNCardIO */,
-				AAD04B8F1D6EE90F0059CD99 /* CardIO */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		AAD04B8F1D6EE90F0059CD99 /* CardIO */ = {
-			isa = PBXGroup;
-			children = (
-				AAD04B901D6EE90F0059CD99 /* CardIO.h */,
-				AAD04B911D6EE90F0059CD99 /* CardIOCreditCardInfo.h */,
-				AAD04B921D6EE90F0059CD99 /* CardIODetectionMode.h */,
-				AAD04B931D6EE90F0059CD99 /* CardIOPaymentViewController.h */,
-				AAD04B941D6EE90F0059CD99 /* CardIOPaymentViewControllerDelegate.h */,
-				AAD04B951D6EE90F0059CD99 /* CardIOUtilities.h */,
-				AAD04B961D6EE90F0059CD99 /* CardIOView.h */,
-				AAD04B971D6EE90F0059CD99 /* CardIOViewDelegate.h */,
-				AAD04B981D6EE90F0059CD99 /* libCardIO.a */,
-				AAD04B991D6EE90F0059CD99 /* libopencv_core.a */,
-				AAD04B9A1D6EE90F0059CD99 /* libopencv_imgproc.a */,
-			);
-			path = CardIO;
 			sourceTree = "<group>";
 		};
 		AAD04B9E1D6EE91D0059CD99 /* RNCardIO */ = {
@@ -281,6 +245,11 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(PROJECT_DIR)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../../ios/Pods/CardIO/**",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CardIO",
@@ -297,6 +266,11 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(PROJECT_DIR)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../../ios/Pods/CardIO/**",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CardIO",

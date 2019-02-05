@@ -1,12 +1,38 @@
 # [react-native-awesome-card-io](https://kerumen.github.io/react-native-awesome-card-io/)
 A complete and **cross-platform** [card.io](https://www.card.io/) component for React Native.
 
-## Getting started
+## Getting started:
+
+### Instalation
+
+##### Step 1:
 
 ```bash
 $ npm install react-native-awesome-card-io --save
+```
+
+##### Step 2:
+
+```bash
 $ react-native link react-native-awesome-card-io
 ```
+
+
+##### Step 3:
+###### Cocoapods:
+
+Open your pod file and add the following lines:
+
+```
+# card io
+pod 'CardIO'
+```
+and `pod install`
+
+
+###### or Manual
+
+[Download and add the folder CardIO](https://github.com/card-io/card.io-iOS-SDK/tree/master/CardIO) to your iOS project. (This is a lot of maintenance work though)
 
 ## Usage
 

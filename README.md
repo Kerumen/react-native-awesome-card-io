@@ -8,7 +8,7 @@ $ npm install react-native-awesome-card-io --save
 $ react-native link react-native-awesome-card-io
 ```
 
-**Note:** this project is using the camera, and the camera is not supported by ios simulator.
+**Note:** this project is using the camera, and the camera is not supported by iOS simulator.
 
 ## Usage
 

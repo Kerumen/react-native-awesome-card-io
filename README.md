@@ -159,13 +159,11 @@ An object with the following keys:
 
 #### Methods
 
+`canReadCardWithCamera()` -> Boolean - Determine whether this device supports camera-based card scanning. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOUtilities.h#L24) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#canReadCardWithCamera--))
+
 `preload` -> void (iOS only) - The preload method prepares card.io to launch faster. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOUtilities.h#L31))
 
 #### Constants
-
-`CAN_READ_CARD_WITH_CAMERA`: Boolean
-   
-Determine whether this device supports camera-based card scanning. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOUtilities.h#L24) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#canReadCardWithCamera--))
 
 `DETECTION_MODE`: String
 

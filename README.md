@@ -8,6 +8,8 @@ $ npm install react-native-awesome-card-io --save
 $ react-native link react-native-awesome-card-io
 ```
 
+**Note:** this project is using the camera, and the camera is not supported by iOS simulator.
+
 ## Usage
 
 This component provides an abstraction of the card.io entry points for iOS and Android.
@@ -17,7 +19,7 @@ This component provides an abstraction of the card.io entry points for iOS and A
 | `CardIOModule` | [`CardIOPaymentViewController`](https://github.com/card-io/card.io-iOS-SDK#integrate-as-a-view) | [`CardIOActivity`](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html) | A module to launch the card.io view controller which handles everything.            |
 | `CardIOView`   | [`CardIOView`](https://github.com/card-io/card.io-iOS-SDK#integrate-as-a-view-controller)       | N / A                                                                                                | Create a `CardIOView` to do card scanning only and manage everything else yourself. |
 
-### `CardIOView`
+### `CardIOView` (iOS only)
 
 *This component is iOS-only as the card.io Android SDK does not offer this functionality.*
 
@@ -26,7 +28,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { CardIOView, CardIOUtilities } from 'react-native-awesome-card-io';
 
-class CardIOExample extends Component {
+export default class CardIOExample extends Component {
 
   componentWillMount() {
     CardIOUtilities.preload();
@@ -80,7 +82,7 @@ import React, { Component } from 'react';
 import { View, TouchableOpacity, Text, Platform } from 'react-native';
 import { CardIOModule, CardIOUtilities } from 'react-native-awesome-card-io';
 
-class CardIOExample extends Component {
+export default class CardIOExample extends Component {
 
   componentWillMount() {
     if (Platform.OS === 'ios') {
@@ -101,7 +103,7 @@ class CardIOExample extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <TouchableOpacity onPress={this.scanCard.bind(this)}>
           <Text>Scan card!</Text>
         </TouchableOpacity>

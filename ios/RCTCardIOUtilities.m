@@ -14,13 +14,21 @@ RCT_EXPORT_MODULE();
 
 - (NSDictionary *)constantsToExport {
     return @{
-        @"DETECTION_MODE": DETECTION_MODE,
-        @"CAN_READ_CARD_WITH_CAMERA": @([CardIOUtilities canReadCardWithCamera])
+        @"DETECTION_MODE": DETECTION_MODE
     };
+}
+
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
 }
 
 RCT_EXPORT_METHOD(preload) {
     return [CardIOUtilities preload];
+}
+
+RCT_REMAP_METHOD(canReadCardWithCamera, canReadCardWithCameraResolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve(@([CardIOUtilities canReadCardWithCamera]));
 }
 
 @end

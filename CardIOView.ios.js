@@ -17,7 +17,6 @@ class CardIOView extends Component {
     hideCardIOLogo: PropTypes.bool,
     allowFreelyRotatingCardGuide: PropTypes.bool,
     scanInstructions: PropTypes.string,
-    scanOverlayView: PropTypes.element,
     scanExpiry: PropTypes.bool,
     scannedImageDuration: PropTypes.number,
     detectionMode: PropTypes.oneOf([

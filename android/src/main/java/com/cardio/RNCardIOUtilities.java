@@ -1,7 +1,12 @@
 package com.cardio;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.uimanager.IllegalViewOperationException;
 
 import io.card.payment.CardIOActivity;
 
@@ -18,10 +23,12 @@ public class RNCardIOUtilities extends ReactContextBaseJavaModule {
     return "RCTCardIOUtilities";
   }
 
-  @Override
-  public Map<String, Object> getConstants() {
-    final Map<String, Object> constants = new HashMap<>();
-    constants.put("CAN_READ_CARD_WITH_CAMERA", CardIOActivity.canReadCardWithCamera());
-    return constants;
+  @ReactMethod
+  public void canReadCardWithCamera(Promise promise) {
+    try {
+      promise.resolve(CardIOActivity.canReadCardWithCamera());
+    } catch (Exception e) {
+      promise.reject(e);
+    }
   }
 }

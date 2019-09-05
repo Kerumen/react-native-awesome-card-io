@@ -1,5 +1,6 @@
 PODS:
   - boost-for-react-native (1.63.0)
+  - CardIO (5.4.1)
   - DoubleConversion (1.1.6)
   - Folly (2018.10.22.00):
     - boost-for-react-native
@@ -79,6 +80,9 @@ PODS:
     - React-Core (= 0.60.5)
   - React-RCTWebSocket (0.60.5):
     - React-Core (= 0.60.5)
+  - RNAwesomeCardIO (0.8.2):
+    - CardIO
+    - React
   - yoga (0.60.5.React)
 
 DEPENDENCIES:
@@ -102,11 +106,13 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
+  - RNAwesomeCardIO (from `../node_modules/react-native-awesome-card-io`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+    - CardIO
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -149,11 +155,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   React-RCTWebSocket:
     :path: "../node_modules/react-native/Libraries/WebSocket"
+  RNAwesomeCardIO:
+    :path: "../node_modules/react-native-awesome-card-io"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
@@ -174,6 +183,7 @@ SPEC CHECKSUMS:
   React-RCTText: b074d89033583d4f2eb5faf7ea2db3a13c7553a2
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
+  RNAwesomeCardIO: bbed31a56b7286fd30f7fea2d2674b26134e41e2
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
 PODFILE CHECKSUM: 427825d45bec91cf181bdca5a1e33480e904ef46

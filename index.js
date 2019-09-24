@@ -1,5 +1,5 @@
-import CardIOView from './CardIOView'
-import CardIOModule from './CardIOModule'
-import CardIOUtilities from './CardIOUtilities'
+import CardIOView from './src/CardIOView'
+import CardIOModule from './src/CardIOModule'
+import CardIOUtilities from './src/CardIOUtilities'
 
 export { CardIOView, CardIOModule, CardIOUtilities }

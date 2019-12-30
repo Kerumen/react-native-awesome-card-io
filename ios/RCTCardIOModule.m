@@ -114,6 +114,7 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
     [self parseConfig:config viewController:scanViewController];
 
     UIViewController *rootViewController = RCTPresentedViewController();
+    scanViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     [rootViewController presentViewController:scanViewController animated:YES completion:nil];
 }
 

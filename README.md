@@ -1,3 +1,7 @@
+# ⚠️ Both [iOS](https://github.com/card-io/card.io-iOS-SDK) and [Android](https://github.com/card-io/card.io-Android-SDK) SDKs have been archived
+As this wrapper depends on them, there is not much I can do to support new OS versions or fix bugs..
+I tried to reach out people there to have an explanation on the deprecation but I'm yet to receive a response. In the meantime, please be comprehensive and do not open issues not related to the wrapper. Thanks!
+
 # [react-native-awesome-card-io](https://kerumen.github.io/react-native-awesome-card-io/)
 A complete and **cross-platform** [card.io](https://www.card.io/) component for React Native.
 

@@ -114,6 +114,7 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
     [self parseConfig:config viewController:scanViewController];
 
     UIViewController *rootViewController = RCTPresentedViewController();
+    scanViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     [rootViewController presentViewController:scanViewController animated:YES completion:nil];
 }
 
@@ -122,11 +123,29 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
     _reject(@"user_cancelled", @"The user cancelled", nil);
 }
 
+- (NSString *)documentsPathForFileName:(NSString *)name
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    return [documentsPath stringByAppendingPathComponent:name];
+}
+
+- (NSString *)saveScannedImageToDocumentsDirectory:(UIImage *)scannedImage {
+    NSData* imageData = UIImagePNGRepresentation(scannedImage);
+    NSString *filePath = [self documentsPathForFileName:@"scannedImage.png"]; //Add the file name
+    [imageData writeToFile:filePath atomically:YES]; //Write the file
+    return filePath;
+}
+
 - (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)cardInfo inPaymentViewController:(CardIOPaymentViewController *)scanViewController {
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
 
     NSString *cardType = [CardIOCreditCardInfo displayStringForCardType:cardInfo.cardType usingLanguageOrLocale:scanViewController.languageOrLocale];
-
+    NSString *filePath = [self saveScannedImageToDocumentsDirectory:cardInfo.cardImage];
+    NSURL *filePathURL = [NSURL fileURLWithPath:filePath];
+    NSString *filePathURLStr = filePathURL.absoluteString;
+    
     _resolve(@{
         @"cardType": cardType,
         @"cardNumber": cardInfo.cardNumber ?: [NSNull null],
@@ -136,7 +155,9 @@ RCT_EXPORT_METHOD(scanCard:(NSDictionary *)config resolver:(RCTPromiseResolveBlo
         @"cvv": cardInfo.cvv ?: [NSNull null],
         @"postalCode": cardInfo.postalCode ?: [NSNull null],
         @"scanned": @(cardInfo.scanned),
-        @"cardholderName": cardInfo.cardholderName ?: [NSNull null]
+        @"cardholderName": cardInfo.cardholderName ?: [NSNull null],
+        @"scannedImagePath": filePath ?: [NSNull null],
+        @"scannedImageURL": filePathURLStr ?: [NSNull null]
     });
 }
 

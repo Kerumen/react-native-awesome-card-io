@@ -16,14 +16,25 @@ import com.facebook.react.bridge.WritableMap;
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
 
+import android.graphics.Bitmap;
+import android.content.ContextWrapper;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+
 public class RNCardIOModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
   public static final int CARD_IO_SCAN = 1;
 
   private Promise promise;
+  private ReactApplicationContext mReactContext;
 
   public RNCardIOModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    mReactContext = reactContext;
     reactContext.addActivityEventListener(this);
   }
 
@@ -37,8 +48,11 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     this.promise = promise;
     Activity activity = getCurrentActivity();
     Intent scanIntent = new Intent(activity, CardIOActivity.class);
-    scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, true);
-    scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, true);
+    //scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, true);
+    //scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, true);
+    scanIntent.putExtra(CardIOActivity.EXTRA_CAPTURED_CARD_IMAGE, true);
+    scanIntent.putExtra(CardIOActivity.EXTRA_RETURN_CARD_IMAGE, true);
+    
     parseConfig(config, scanIntent);
     if (activity != null) {
       activity.startActivityForResult(scanIntent, CARD_IO_SCAN);
@@ -97,6 +111,9 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     if (config.hasKey("usePaypalActionbarIcon")) {
       intent.putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, config.getBoolean("usePaypalActionbarIcon"));
     }
+    if (config.hasKey("borderImageOnly")) {
+      intent.putExtra(CardIOActivity.EXTRA_SUPPRESS_SCAN, config.getBoolean("borderImageOnly"));
+    }
   }
 
   @Override
@@ -104,17 +121,37 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     if (requestCode != CARD_IO_SCAN) {
       return;
     }
-    if (data != null && data.hasExtra(CardIOActivity.EXTRA_SCAN_RESULT)) {
-      CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
+    if (data != null ) {
+     
+      
+      Bitmap resultCard = CardIOActivity.getCapturedCardImage(data);
+
+        ContextWrapper wrapper = new ContextWrapper(mReactContext);
+        File newImageFile = wrapper.getDir("images",0);
+        newImageFile = new File(newImageFile, "detectedCardImage"+ ".jpg");
+        try {
+            OutputStream outputStream = new FileOutputStream(newImageFile);
+            resultCard.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
+            outputStream.flush();
+            outputStream.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//       CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
+      
       WritableMap res = Arguments.createMap();
-      res.putString("cardType", scanResult.getCardType().getDisplayName(data.getStringExtra(CardIOActivity.EXTRA_LANGUAGE_OR_LOCALE)));
-      res.putString("cardNumber", scanResult.cardNumber);
-      res.putString("redactedCardNumber", scanResult.getRedactedCardNumber());
-      res.putInt("expiryMonth", scanResult.expiryMonth);
-      res.putInt("expiryYear", scanResult.expiryYear);
-      res.putString("cvv", scanResult.cvv);
-      res.putString("postalCode", scanResult.postalCode);
-      res.putString("cardholderName", scanResult.cardholderName);
+      res.putString("scannedImagePath", newImageFile.getAbsolutePath());
+//       res.putString("cardNumber", scanResult.cardNumber);
+//       res.putString("redactedCardNumber", scanResult.getRedactedCardNumber());
+//       res.putInt("expiryMonth", scanResult.expiryMonth);
+//       res.putInt("expiryYear", scanResult.expiryYear);
+//       res.putString("cvv", scanResult.cvv);
+//       res.putString("postalCode", scanResult.postalCode);
+//       res.putString("cardholderName", scanResult.cardholderName);
       promise.resolve(res);
     } else {
       promise.reject("user_cancelled", "The user cancelled");

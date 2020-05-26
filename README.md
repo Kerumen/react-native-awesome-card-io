@@ -77,6 +77,8 @@ export default class CardIOExample extends Component {
 
 `detectionMode` *[CardIODetectionMode](#constants)* `CardIODetectionModeCardImageAndNumber` - Set the detection mode. ([Docs](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOView.h#L90))
 
+`keepTheme` *boolean* `false` - Set to `true` to keep default android theme styles from styles.xml for inputs after card scan.
+
 ### `CardIOModule`
 
 *This module abstracts the [`CardIOPaymentViewController`](https://github.com/card-io/card.io-iOS-SDK#integrate-as-a-view) on iOS and the [`CardIOActivity`](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html) on Android.*

@@ -13,7 +13,9 @@ $ npm install react-native-awesome-card-io --save
 $ cd ios && pod install && cd ..
 ```
 
-**Note:** this project is using the camera, and the camera is not supported by iOS simulator.
+### iOS
+
+You should add the key [NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your app's Info.plist and set the value to be a string describing why your app needs to use the camera (e.g. "To scan credit cards."). This string will be displayed when the app initially requests permission to access the camera.
 
 ## Usage
 

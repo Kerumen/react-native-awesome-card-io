@@ -1,6 +1,6 @@
 {
   "name": "react-native-awesome-card-io",
-  "version": "0.9.0-rc.1",
+  "version": "0.9.0",
   "description": "A complete and cross-platform React Native component for card.io",
   "main": "index.js",
   "scripts": {

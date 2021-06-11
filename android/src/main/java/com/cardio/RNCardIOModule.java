@@ -18,7 +18,7 @@ import io.card.payment.CreditCard;
 
 public class RNCardIOModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
-  public static final int CARD_IO_SCAN = 1;
+  public static final int CARD_IO_SCAN = 7772;
 
   private Promise promise;
 

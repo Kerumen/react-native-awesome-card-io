@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.5",
+    "react-native": "0.62.3",
     "react-native-awesome-card-io": "file:../"
   },
   "devDependencies": {

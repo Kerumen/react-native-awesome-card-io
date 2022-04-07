@@ -97,6 +97,8 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
     if (config.hasKey("usePaypalActionbarIcon")) {
       intent.putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, config.getBoolean("usePaypalActionbarIcon"));
     }
+
+    intent.putExtra(CardIOActivity.EXTRA_RETURN_CARD_IMAGE, true);
   }
 
   @Override
@@ -116,6 +118,7 @@ public class RNCardIOModule extends ReactContextBaseJavaModule implements Activi
         res.putString("cvv", scanResult.cvv);
         res.putString("postalCode", scanResult.postalCode);
         res.putString("cardholderName", scanResult.cardholderName);
+        res.putBoolean("scanned", data.hasExtra(CardIOActivity.EXTRA_CAPTURED_CARD_IMAGE));
         promise.resolve(res);
       } else {
         promise.reject("user_cancelled", "The user cancelled");

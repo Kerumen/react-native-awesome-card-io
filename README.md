@@ -156,7 +156,7 @@ An object with the following keys:
 - `expiryYear` _number_ - Expiry year (may be 0 if expiry information was not requested).
 - `cvv` _string_ - Security code.
 - `postalCode` _string_ - Postal code. Format is country dependent.
-- `scanned` _boolean_ (iOS only) - Was the card number scanned (as opposed to entered manually)?
+- `scanned` _boolean_ - Was the card number scanned (as opposed to entered manually)?
 - `cardholderName` _string_ - Card holder name.
 
 ### CardIOUtilities

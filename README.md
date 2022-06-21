@@ -116,9 +116,9 @@ export default class CardIOExample extends Component {
 
 #### Methods
 
-`scanCard([config])` -> Promise - Launch the card.io controller to manage the card scanning and get the [CreditCard](#creditcard) result in the resolved promise.
+`scanCard(config)` -> Promise - Launch the card.io controller to manage the card scanning and get the [CreditCard](#creditcard) result in the resolved promise.
 
-- `config` On object with the following available keys:
+- `config` An object with the following available keys:
 
   - `languageOrLocale` _string_ - The preferred language for all strings appearing in the user interface. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L43) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_LANGUAGE_OR_LOCALE))
   - `guideColor` _string_ - Alter the card guide (bracket) color. Opaque colors recommended. ([iOS](https://github.com/card-io/card.io-iOS-SDK/blob/ec9a8632c9fd879537354d4b9075aa487dcebe8b/CardIO/CardIOPaymentViewController.h#L70) / [Android](http://card-io.github.io/card.io-Android-SDK/io/card/payment/CardIOActivity.html#EXTRA_GUIDE_COLOR))
